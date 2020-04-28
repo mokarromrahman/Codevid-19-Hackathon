@@ -20,7 +20,7 @@ public class Goal : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("You won!");
-        Score.CurrentScore = 1000;
+        Score.CurrentScore += 1000;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

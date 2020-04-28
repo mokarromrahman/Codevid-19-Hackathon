@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Worm : MonoBehaviour
 {
-
     public Rigidbody2D _rbWorm;
 
     public float _fSpeed = 1f;
@@ -26,4 +25,11 @@ public class Worm : MonoBehaviour
         //
         _rbWorm.position = _rbWorm.position + forward * Time.fixedDeltaTime * _fSpeed;
     }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(this.gameObject);
+        UnityEngine.Debug.Log("'" + name + "' can not be seen anymore.");
+    }
+
 }
