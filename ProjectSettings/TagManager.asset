@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Worm
   layers:
   - Default
   - TransparentFX
@@ -38,6 +39,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3640862825
+    locked: 0
+  - name: Divider
+    uniqueID: 1476609083
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
