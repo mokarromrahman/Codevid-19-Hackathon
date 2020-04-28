@@ -8,6 +8,7 @@ public class timer : MonoBehaviour
     public float timeStart = 60;
     public Text textBox;
     // Start is called before the first frame update
+    //here is a script comment
     void Start()
     {
         textBox.text = timeStart.ToString();
