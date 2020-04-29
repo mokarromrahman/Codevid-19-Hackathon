@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Worm : MonoBehaviour
+public class MoveObject : MonoBehaviour
 {
     public Rigidbody2D _rbWorm;
 
@@ -29,7 +29,7 @@ public class Worm : MonoBehaviour
     private void OnBecameInvisible()
     {
         Destroy(this.gameObject);
-        UnityEngine.Debug.Log("'" + name + "' can not be seen anymore.");
+        //UnityEngine.Debug.Log("'" + name + "' can not be seen anymore.");
     }
 
 }

@@ -347,7 +347,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.3990855
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 829873525}
   - component: {fileID: 829873524}
   m_Layer: 0
-  m_Name: WormSpawner
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -437,7 +437,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fSpawnDelay: 0.3
-  _worm: {fileID: 1952641500579745937, guid: 8a556aa215e534c4580dd25f2fc166ca, type: 3}
+  lysol: {fileID: 6558500371679201026, guid: b46902d10f452d14281787d2065292df, type: 3}
+  dirtyHand: {fileID: 474086757012705420, guid: 8dcdf76dd3f913544876df089035623e,
+    type: 3}
+  remote: {fileID: 4325320413678082931, guid: d6be8527940ae494daf58b6f3ffaf970, type: 3}
+  phone: {fileID: 7027520542339547310, guid: 8e95a3057134a6b45bf9a87b7095e800, type: 3}
   _SpawnPoints:
   - {fileID: 1547255269}
   - {fileID: 878126067}
@@ -637,6 +641,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1237331076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1237331077}
+  m_Layer: 0
+  m_Name: movePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1237331077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237331076}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2065500220}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1527472541
 GameObject:
@@ -891,6 +925,7 @@ GameObject:
   - component: {fileID: 2065500218}
   - component: {fileID: 2065500217}
   - component: {fileID: 2065500221}
+  - component: {fileID: 2065500222}
   m_Layer: 0
   m_Name: flowerSnail
   m_TagString: Untagged
@@ -993,9 +1028,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065500216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
   m_LocalScale: {x: 3.4903004, y: 3.427519, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1237331077}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1011,7 +1047,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 579f12a084f26424cb12f1bac9cd795d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rb2D: {fileID: 2065500217}
+--- !u!114 &2065500222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065500216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21ac86eaaa330df45a57a64fb71e24d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2065500217}
+  speed: 10
 --- !u!1 &2078581339
 GameObject:
   m_ObjectHideFlags: 0
