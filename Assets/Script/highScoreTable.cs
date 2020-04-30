@@ -24,7 +24,6 @@ public class highScoreTable : MonoBehaviour
         //commented out - drag into the variables in the inspector instead
         //entryContainer = transform.Find("highScoreEntryContainer");
         //entryTemplate = transform.Find("highScoreEntryTemplate");
-
         entryTemplate.gameObject.SetActive(false);
         //PlayerPrefs.DeleteAll();
 
