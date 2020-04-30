@@ -105,15 +105,16 @@ public class highScoreTable : MonoBehaviour
      * param: score = the players score
      * param: name = the players name
      */
-    public void addHighScoreEntry(int score, string name)
+    public static void addHighScoreEntry(int score, string name)
     {
         //create high score entry
         HighScoreEntry highScoreEntry = new HighScoreEntry { score = score, name = name };
         
         // load saved high scores
         string jsonString = PlayerPrefs.GetString("highscoreTable");
-        HighScores highScores = JsonUtility.FromJson<HighScores>(jsonString);
+        //HighScores highScores = JsonUtility.FromJson<HighScores>(jsonString);
 
+        HighScores highScores = JsonUtility.FromJson<HighScores>(jsonString);
         // add new entry to high scores
         highScores.highScoreEntryList.Add(highScoreEntry);
         
@@ -143,7 +144,6 @@ public class highScoreTable : MonoBehaviour
     {
         public int score;
         public string name;
-
     }
 
 }

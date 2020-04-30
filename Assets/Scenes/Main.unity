@@ -531,11 +531,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fSpawnDelay: 0.3
   lysol: {fileID: 6558500371679201026, guid: b46902d10f452d14281787d2065292df, type: 3}
-  dirtyHand: {fileID: 474086757012705420, guid: 8dcdf76dd3f913544876df089035623e,
-    type: 3}
+  doorKnob: {fileID: 0}
   remote: {fileID: 4325320413678082931, guid: d6be8527940ae494daf58b6f3ffaf970, type: 3}
   phone: {fileID: 7027520542339547310, guid: 8e95a3057134a6b45bf9a87b7095e800, type: 3}
   glove: {fileID: 796958056125685570, guid: 87fe835830201154fb102d4ae53ea739, type: 3}
+  lightswitch: {fileID: 8749928427233131714, guid: 4211136435ea6c54c99ee32958c79f8d,
+    type: 3}
+  toiletPaper: {fileID: 6913768172521246033, guid: 893c3b600aaaf674597e8d13c4a7aaa3,
+    type: 3}
   _SpawnPoints:
   - {fileID: 1547255269}
   - {fileID: 878126067}
