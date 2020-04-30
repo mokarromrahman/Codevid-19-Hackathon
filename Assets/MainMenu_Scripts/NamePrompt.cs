@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NamePrompt : MonoBehaviour
 {
+    public Button btn_back;
     public InputField textbox;
     public Button btn_OK;
     public GameObject prompt;
@@ -13,11 +15,21 @@ public class NamePrompt : MonoBehaviour
     private void Awake()
     {
         btn_OK.onClick.AddListener(ClosePrompt);
+        btn_back.onClick.AddListener(GoToMainMenu);
     }
 
     private void ClosePrompt()
     {
         prompt.SetActive(false);
+        highScoreTable.addHighScoreEntry(Score.CurrentScore, textbox.text);
+        highScoreTable hst = new highScoreTable();
+    }
+
+    private void GoToMainMenu()
+    {
+        UnityEngine.Debug.Log("Go to main menu");
+
+        SceneManager.LoadScene("MainMenu");
     }
 
     void Start()

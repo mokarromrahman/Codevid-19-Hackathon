@@ -531,7 +531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fSpawnDelay: 0.3
   lysol: {fileID: 6558500371679201026, guid: b46902d10f452d14281787d2065292df, type: 3}
-  doorKnob: {fileID: 0}
+  doorKnob: {fileID: 474086757012705420, guid: 8dcdf76dd3f913544876df089035623e, type: 3}
   remote: {fileID: 4325320413678082931, guid: d6be8527940ae494daf58b6f3ffaf970, type: 3}
   phone: {fileID: 7027520542339547310, guid: 8e95a3057134a6b45bf9a87b7095e800, type: 3}
   glove: {fileID: 796958056125685570, guid: 87fe835830201154fb102d4ae53ea739, type: 3}
