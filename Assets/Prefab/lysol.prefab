@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5624282083306829029}
   m_Layer: 0
   m_Name: lysol
-  m_TagString: Lysol
+  m_TagString: Helpful
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
