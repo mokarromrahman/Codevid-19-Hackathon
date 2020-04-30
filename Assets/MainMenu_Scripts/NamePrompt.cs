@@ -10,6 +10,9 @@ public class NamePrompt : MonoBehaviour
     public InputField textbox;
     public Button btn_OK;
     public GameObject prompt;
+
+    public static string name_input;
+
     // Start is called before the first frame update
 
     private void Awake()
@@ -21,8 +24,8 @@ public class NamePrompt : MonoBehaviour
     private void ClosePrompt()
     {
         prompt.SetActive(false);
-        highScoreTable.addHighScoreEntry(Score.CurrentScore, textbox.text);
-        highScoreTable hst = new highScoreTable();
+
+        name_input = textbox.text;
     }
 
     private void GoToMainMenu()
@@ -36,7 +39,10 @@ public class NamePrompt : MonoBehaviour
     {
        
         if (Goal.GameOver)
+        {
             prompt.SetActive(true);
+            Goal.GameOver = false;
+        }            
         else
             prompt.SetActive(false);
     }

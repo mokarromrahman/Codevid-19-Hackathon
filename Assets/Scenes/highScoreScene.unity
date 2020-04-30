@@ -232,6 +232,7 @@ MonoBehaviour:
   entryContainer: {fileID: 1640264177}
   entryTemplate: {fileID: 1444238520}
   highScoreEntryTransformList: []
+  highScoreEntryList: []
 --- !u!20 &204752276
 Camera:
   m_ObjectHideFlags: 0
@@ -1998,6 +1999,7 @@ MonoBehaviour:
   entryContainer: {fileID: 1640264177}
   entryTemplate: {fileID: 1444238520}
   highScoreEntryTransformList: []
+  highScoreEntryList: []
 --- !u!1 &2096103731
 GameObject:
   m_ObjectHideFlags: 0

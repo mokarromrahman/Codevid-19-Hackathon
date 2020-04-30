@@ -18,12 +18,12 @@ public class timer : MonoBehaviour
     //name of the high score scene
     public string highScoreScene;
 
+
     // Start is called before the first frame update
     //here is a script comment
     void Start()
     {
         textBox.text = timeStart.ToString();
-
         timeStart = timeLimit;
     }
 
