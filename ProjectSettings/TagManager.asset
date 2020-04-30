@@ -4,11 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Worm
-  - Hand
-  - Lysol
-  - Phone
-  - Remote
+  - Goal
+  - Dangerous
+  - Helpful
   layers:
   - Default
   - TransparentFX

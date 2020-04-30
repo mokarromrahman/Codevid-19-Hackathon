@@ -19,16 +19,32 @@ public class FlowerSnail : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag.Equals("Hand")|| collision.tag.Equals("Remote")|| collision.tag.Equals("Phone"))
+        //decrease points by 50 points when hitting a negative object
+        if(collision.tag.Equals("Dangerous"))
         {
-            Debug.Log("We lost!");
-            Score.CurrentScore = 0;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //Debug.Log("We lost!");
+            Score.CurrentScore -= 50;
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            //prevent the points from being less than 0
+            if(Score.CurrentScore < 1)
+                Score.CurrentScore = 0;
+
         }
-        if(collision.tag.Equals("Lysol"))
+
+        //getting lysol 
+        if (collision.tag.Equals("Helpful"))
         {
             Debug.Log("Extra points!");
             Score.CurrentScore += 50;
+        }
+
+        //getting to the end
+        if(collision.tag.Equals("Goal"))
+        {
+            Score.CurrentScore += 1000;
+            Debug.Log("Reached the endpoint.");
+
         }
     }
 }

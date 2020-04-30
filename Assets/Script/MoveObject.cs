@@ -32,4 +32,11 @@ public class MoveObject : MonoBehaviour
         //UnityEngine.Debug.Log("'" + name + "' can not be seen anymore.");
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag.Equals("Player"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

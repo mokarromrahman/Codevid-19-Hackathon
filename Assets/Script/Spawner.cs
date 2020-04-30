@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System.Net.Http.Headers;
+
 
 public class Spawner : MonoBehaviour
 {
@@ -15,6 +18,7 @@ public class Spawner : MonoBehaviour
     public GameObject dirtyHand;
     public GameObject remote;
     public GameObject phone;
+    public GameObject glove;
 
     public Transform[] _SpawnPoints;
     // Update is called once per frame
@@ -28,6 +32,25 @@ public class Spawner : MonoBehaviour
         _lgobj.Add(dirtyHand);
         _lgobj.Add(remote);
         _lgobj.Add(phone);
+        _lgobj.Add(glove);
+
+        //I was trying to dynamically add the prefab object. it was not working 
+        //string dir = Directory.GetCurrentDirectory() + "/Assets/Prefab";
+        //List<string> prefabs = new List<string>(Directory.GetFiles(dir));
+        //prefabs.ForEach(p =>
+        //{
+        //    if(p.EndsWith(".prefab"))
+        //    {
+        //        //Debug.Log(p);
+        //        FileInfo fi = new FileInfo(p);
+        //        GameObject g = Resources.Load(Path.GetFileNameWithoutExtension(fi.Name)) as GameObject;
+        //        if (g != null)
+        //        {
+
+        //            _lgobj.Add(Instantiate(g));
+        //        }
+        //    }
+        //});
     }
 
     void Update()
