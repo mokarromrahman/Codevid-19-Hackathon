@@ -113,12 +113,13 @@ public class highScoreTable : MonoBehaviour
      * param: score = the players score
      * param: name = the players name
      */
-    public void addHighScoreEntry(int score, string name)
+    public static void addHighScoreEntry(int score, string name)
     {
         //a new high score entry
         HighScoreEntry highScoreEntry = new HighScoreEntry { score = score, name = name };
         
         // load saved high scores
+<<<<<<< HEAD
         string jsonString = PlayerPrefs.GetString("highscoreTable"); //uploading list from key --> will be empty upon application launch
         if (jsonString.Length < 1)
         {
@@ -129,7 +130,12 @@ public class highScoreTable : MonoBehaviour
             highScores = JsonUtility.FromJson<HighScores>(jsonString); //highscores is non null
         }
 
+=======
+        string jsonString = PlayerPrefs.GetString("highscoreTable");
+        //HighScores highScores = JsonUtility.FromJson<HighScores>(jsonString);
+>>>>>>> 5205c6e642f0223e4504a53c5db0a366badf920d
 
+        HighScores highScores = JsonUtility.FromJson<HighScores>(jsonString);
         // add new entry to high scores
         highScores.highScoreEntryList.Add(highScoreEntry);
         
@@ -161,7 +167,6 @@ public class highScoreTable : MonoBehaviour
     {
         public int score;
         public string name;
-
     }
 
 }
