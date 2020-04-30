@@ -55,7 +55,9 @@ public class timer : MonoBehaviour
         {
             Goal.GameOver = true;
             Debug.Log("Ran out of time.");
+            
             SceneManager.LoadScene(highScoreScene);
+            //highScoreTable.addHighScoreEntry(Score.CurrentScore, "mac");
             Score.CurrentScore = 0;
             return;
         }

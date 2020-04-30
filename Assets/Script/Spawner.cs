@@ -15,10 +15,12 @@ public class Spawner : MonoBehaviour
 
     //public GameObject worm;
     public GameObject lysol;
-    public GameObject dirtyHand;
+    public GameObject doorKnob;
     public GameObject remote;
     public GameObject phone;
     public GameObject glove;
+    public GameObject lightswitch;
+    public GameObject toiletPaper;
 
     public Transform[] _SpawnPoints;
     // Update is called once per frame
@@ -29,10 +31,12 @@ public class Spawner : MonoBehaviour
     {
         _lgobj = new List<GameObject>();
         _lgobj.Add(lysol);
-        _lgobj.Add(dirtyHand);
+        _lgobj.Add(doorKnob);
         _lgobj.Add(remote);
         _lgobj.Add(phone);
         _lgobj.Add(glove);
+        _lgobj.Add(lightswitch);
+        _lgobj.Add(toiletPaper);
 
         //I was trying to dynamically add the prefab object. it was not working 
         //string dir = Directory.GetCurrentDirectory() + "/Assets/Prefab";
