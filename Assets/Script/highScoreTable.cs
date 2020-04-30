@@ -29,23 +29,24 @@ public class highScoreTable : MonoBehaviour
 
      
         entryTemplate.gameObject.SetActive(false);
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
+
 
 
         //loading the string - if there is anything to load
         //possibly need a null string check here?
 
-        string jsonString = PlayerPrefs.GetString("highscoreTable"); //json string is empty
+        string jsonString = PlayerPrefs.GetString("highscoreTable"); //json string is empty if there is no high scores
         if (jsonString.Length < 1)
         {
-           highScores = new HighScores { highScoreEntryList = highScoreEntryList };
+           highScores = new HighScores { highScoreEntryList = highScoreEntryList }; //initialize highScores this way
         }
         else
         {
-           highScores = JsonUtility.FromJson<HighScores>(jsonString); //highscores is non null
+           highScores = JsonUtility.FromJson<HighScores>(jsonString); //highscores is non-null, load from json string
         }
 
-        UnityEngine.Debug.Log("highscores: " + highScores);
+        //UnityEngine.Debug.Log("highscores: " + highScores);
 
 
         //sort the list by score
