@@ -8,16 +8,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*
- * this class manages the score board
- * and saves player scores. Scores
- * will still be available offline
+ * this class manages the score board and saves player scores. Scores will still be available offline
  */
 public class highScoreTable : MonoBehaviour
 {
     public Transform entryContainer;
     public Transform entryTemplate;
- 
     public List<Transform> highScoreEntryTransformList;
+
+    public List<HighScoreEntry> highScoreEntryList;
+    HighScores highScores;
 
     private void Awake()
     {
@@ -27,19 +27,24 @@ public class highScoreTable : MonoBehaviour
 
      
         entryTemplate.gameObject.SetActive(false);
+        PlayerPrefs.DeleteAll();
 
-        /*
-         * TO DO: apr 29
-         * call addHighScoreEntry with player name and score elsewhere
-         */
-        addHighScoreEntry(420, "Leah");
-
-    
 
         //loading the string - if there is anything to load
         //possibly need a null string check here?
-        string jsonString = PlayerPrefs.GetString("highscoreTable");
-        HighScores highScores = JsonUtility.FromJson<HighScores>(jsonString);
+
+
+        string jsonString = PlayerPrefs.GetString("highscoreTable"); //json string is empty
+        if (jsonString.Length < 1)
+        {
+           highScores = new HighScores { highScoreEntryList = highScoreEntryList };
+        }
+        else
+        {
+           highScores = JsonUtility.FromJson<HighScores>(jsonString); //highscores is non null
+        }
+
+        UnityEngine.Debug.Log("highscores: " + highScores);
 
 
         //sort the list by score
@@ -62,6 +67,9 @@ public class highScoreTable : MonoBehaviour
 
     }
 
+    /**
+     * function to display the list on the screen and format it properly
+     */
     public void createHighScoreEntryTransform(HighScoreEntry highScoreEntry, Transform container, List<Transform> transformList)
     {
 
@@ -107,25 +115,34 @@ public class highScoreTable : MonoBehaviour
      */
     public void addHighScoreEntry(int score, string name)
     {
-        //create high score entry
+        //a new high score entry
         HighScoreEntry highScoreEntry = new HighScoreEntry { score = score, name = name };
         
         // load saved high scores
-        string jsonString = PlayerPrefs.GetString("highscoreTable");
-        HighScores highScores = JsonUtility.FromJson<HighScores>(jsonString);
+        string jsonString = PlayerPrefs.GetString("highscoreTable"); //uploading list from key --> will be empty upon application launch
+        if (jsonString.Length < 1)
+        {
+            highScores = new HighScores { highScoreEntryList = highScoreEntryList };
+        }
+        else
+        {
+            highScores = JsonUtility.FromJson<HighScores>(jsonString); //highscores is non null
+        }
+
 
         // add new entry to high scores
         highScores.highScoreEntryList.Add(highScoreEntry);
         
-        //save udated highscores
-        string json = JsonUtility.ToJson(highScores);
-        PlayerPrefs.SetString("highscoreTable", json); //key, value 
+        //save updated highscores
+        string json = JsonUtility.ToJson(highScores); // converting highScores to json. 
+        PlayerPrefs.SetString("highscoreTable", json); //key, value --> saving the json string of highscores
         PlayerPrefs.Save(); //saving the string in json format
 
     }
 
     /*
      *class that holds the list to be jsonified lol 
+     * ---> Highscores is an object that is a list of objects of high scores
      */
     public class HighScores
     {
@@ -137,6 +154,7 @@ public class highScoreTable : MonoBehaviour
      * represents a single high score entry objects (implements serializable)
      * implementing serializable allows HighScoreEntry objects to be converted to Json format
      * in other words, they can be serialized alongside ou highScoreEntryList into json format
+     * ----> HighScoreEntry objects are a high score object. composed of name and score.
      */
     [System.Serializable]
     public class HighScoreEntry
