@@ -53,6 +53,7 @@ public class timer : MonoBehaviour
         //time ran out
         if (timeStart <= 0)
         {
+            Goal.GameOver = true;
             Debug.Log("Ran out of time.");
             SceneManager.LoadScene(highScoreScene);
             Score.CurrentScore = 0;

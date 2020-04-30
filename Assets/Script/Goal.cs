@@ -8,12 +8,13 @@ public class Goal : MonoBehaviour
 {
     //
     public static bool GoalReached { get; set; }
-
+    public static bool GameOver { get; set; }
     public string levelScene;
 
     private void Start()
     {
         GoalReached = false;
+        GameOver = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,6 +25,7 @@ public class Goal : MonoBehaviour
 
         GoalReached = collision.tag.Equals("Player");
 
+        GameOver = false;
 
         SceneManager.LoadScene(levelScene);
         Debug.Log("game won");
