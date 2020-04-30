@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Goal : MonoBehaviour
 {
-
+    //
     public static bool GoalReached { get; set; }
+
+    public string levelScene;
 
     private void Start()
     {
@@ -21,5 +24,8 @@ public class Goal : MonoBehaviour
 
         GoalReached = collision.tag.Equals("Player");
 
+
+        SceneManager.LoadScene(levelScene);
+        Debug.Log("game won");
     }
 }

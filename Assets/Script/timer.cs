@@ -15,6 +15,9 @@ public class timer : MonoBehaviour
     //textbox we're displaying to
     public Text textBox;
 
+    //name of the high score scene
+    public string highScoreScene;
+
     // Start is called before the first frame update
     //here is a script comment
     void Start()
@@ -38,14 +41,12 @@ public class timer : MonoBehaviour
 
         if (Goal.GoalReached)
         {
-            Debug.Log("Ran out of time.");
             //increase the points by the amount of seconds left times 100
             Score.CurrentScore += (int)timeStart * 100;
 
             //reset the timer and the goal reached flag and send back to the beggining
             timeStart = timeLimit;
             Goal.GoalReached = false;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             return;
         }
 
@@ -53,7 +54,7 @@ public class timer : MonoBehaviour
         if (timeStart <= 0)
         {
             Debug.Log("Ran out of time.");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(highScoreScene);
             Score.CurrentScore = 0;
             return;
         }

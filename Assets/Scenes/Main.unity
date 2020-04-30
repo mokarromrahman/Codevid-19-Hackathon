@@ -412,6 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox: {fileID: 298017873}
+  highScoreScene: highScoreScene
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1266,6 +1267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13bb62bf990a0434aaba86a877fa53ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelScene: LevelMenu
 --- !u!61 &2135840900
 BoxCollider2D:
   m_ObjectHideFlags: 0

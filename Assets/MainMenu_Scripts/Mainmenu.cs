@@ -10,29 +10,38 @@ public class Mainmenu : MonoBehaviour
     public Button btn_start;
     public Button btn_levels;
     public Button btn_exit;
+    public Button btn_highScore;
     public string newGameSceneName;
     public string levelSceneName;
+    public string highscoreSceneName;
 
-    public void Awake()
+    private void Awake()
     {
         btn_start.onClick.AddListener(NewGame);
         btn_levels.onClick.AddListener(OpenLevels);
         btn_exit.onClick.AddListener(ExitGame);
+        btn_highScore.onClick.AddListener(HighScore);
     }
 
-    public void NewGame()
+    private void NewGame()
     {
         SceneManager.LoadScene(newGameSceneName);
     }
 
-    public void OpenLevels()
+    private void OpenLevels()
     {
         SceneManager.LoadScene(levelSceneName);
     }
 
-    public void ExitGame()
+    private void HighScore()
+    {
+        SceneManager.LoadScene(highscoreSceneName);
+    }
+
+    private void ExitGame()
     {
         Application.Quit();
     }
 
+    
 }
