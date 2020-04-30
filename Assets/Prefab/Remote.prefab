@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3717589265850301866}
   m_Layer: 0
   m_Name: Remote
-  m_TagString: Remote
+  m_TagString: Dangerous
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

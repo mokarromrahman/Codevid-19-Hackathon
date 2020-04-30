@@ -20,7 +20,7 @@ public class FlowerSnail : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //decrease points by 50 points when hitting a negative object
-        if(collision.tag.Equals("Hand")|| collision.tag.Equals("Remote")|| collision.tag.Equals("Phone"))
+        if(collision.tag.Equals("Dangerous"))
         {
             //Debug.Log("We lost!");
             Score.CurrentScore -= 50;
@@ -33,7 +33,7 @@ public class FlowerSnail : MonoBehaviour
         }
 
         //getting lysol 
-        if (collision.tag.Equals("Lysol"))
+        if (collision.tag.Equals("Helpful"))
         {
             Debug.Log("Extra points!");
             Score.CurrentScore += 50;

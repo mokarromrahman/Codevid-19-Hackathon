@@ -534,6 +534,7 @@ MonoBehaviour:
     type: 3}
   remote: {fileID: 4325320413678082931, guid: d6be8527940ae494daf58b6f3ffaf970, type: 3}
   phone: {fileID: 7027520542339547310, guid: 8e95a3057134a6b45bf9a87b7095e800, type: 3}
+  glove: {fileID: 796958056125685570, guid: 87fe835830201154fb102d4ae53ea739, type: 3}
   _SpawnPoints:
   - {fileID: 1547255269}
   - {fileID: 878126067}
