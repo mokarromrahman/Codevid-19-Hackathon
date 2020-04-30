@@ -231,6 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entryContainer: {fileID: 1640264177}
   entryTemplate: {fileID: 1444238520}
+  highScoreEntryTransformList: []
 --- !u!20 &204752276
 Camera:
   m_ObjectHideFlags: 0
@@ -747,10 +748,10 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SCORE
+  m_Text: playerScore
 --- !u!222 &650279854
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -828,7 +829,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RANK
+  m_Text: rank
 --- !u!222 &1323145053
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1142,10 +1143,10 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NAME
+  m_Text: playerName
 --- !u!222 &2050413219
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1210,3 +1211,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entryContainer: {fileID: 1640264177}
   entryTemplate: {fileID: 1444238520}
+  highScoreEntryTransformList: []
