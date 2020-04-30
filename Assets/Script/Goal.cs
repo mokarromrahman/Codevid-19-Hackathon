@@ -5,22 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class Goal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    //void Start()
-    //{
 
-    //}
+    public static bool GoalReached { get; set; }
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
+    private void Start()
+    {
+        GoalReached = false;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("You won!");
-        Score.CurrentScore += 1000;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //Debug.Log("You won!");
+        //Score.CurrentScore += 1000;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        GoalReached = collision.tag.Equals("Player");
+
     }
 }

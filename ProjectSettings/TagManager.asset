@@ -9,6 +9,7 @@ TagManager:
   - Lysol
   - Phone
   - Remote
+  - Goal
   layers:
   - Default
   - TransparentFX
