@@ -5,12 +5,14 @@ using UnityEngine;
 public class SwipeControl : MonoBehaviour
 {
     public Rigidbody2D player;
+    public Animator animator;
     public int speed = 5;
     Vector2 pointA;
     Vector2 pointB;
     Vector2 targetDistance;
 
     Vector2 screenBoundary;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,11 +37,14 @@ public class SwipeControl : MonoBehaviour
 
         if (player.position == targetDistance ||
             (targetDistance.x > screenBoundary.x || targetDistance.x < -screenBoundary.x) ||
-            (targetDistance.y > screenBoundary.y || targetDistance.y + Vector2.down.y < -screenBoundary.y))
+            (targetDistance.y > screenBoundary.y || targetDistance.y + Vector2.down.y < -screenBoundary.y)) { 
             player.velocity = new Vector2(0, 0);
+        }
+
     }
     private void MoveCharacter()
     {
+   
         Debug.Log("Moving character...");
         
         Vector2 direction = getAngle();
@@ -49,11 +54,13 @@ public class SwipeControl : MonoBehaviour
         {
             if (direction.x > 0)
             {
+                transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x), transform.localScale.y);
                 player.velocity = new Vector2(speed, 0);
                 targetDistance = player.position + Vector2.right;
             }
             else
             {
+                transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
                 player.velocity = new Vector2(-speed, 0);
                 targetDistance = player.position + Vector2.left;
             }                
@@ -71,7 +78,15 @@ public class SwipeControl : MonoBehaviour
                 player.velocity = new Vector2(0, -speed);
                 targetDistance = player.position + Vector2.down;
             }
+
+
+           
         }
+
+        animator.SetFloat("Vertical", player.velocity.y);
+        animator.SetFloat("Horizontal", player.velocity.x);
+        animator.SetFloat("Speed", player.velocity.sqrMagnitude);
+
 
     }    
     private Vector2 getAngle()
