@@ -24,12 +24,9 @@ public class highScoreTable : MonoBehaviour
         //commented out - drag into the variables in the inspector instead
         //entryContainer = transform.Find("highScoreEntryContainer");
         //entryTemplate = transform.Find("highScoreEntryTemplate");
-
      
         entryTemplate.gameObject.SetActive(false);
         PlayerPrefs.DeleteAll();
-
-
 
         //loading the string - if there is anything to load
         //possibly need a null string check here?
