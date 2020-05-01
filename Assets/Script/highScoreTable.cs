@@ -6,17 +6,19 @@ using System.Globalization;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 /*
  * this class manages the score board and saves player scores. Scores will still be available offline
  */
 public class highScoreTable : MonoBehaviour
 {
+
     public Transform entryContainer;
     public Transform entryTemplate;
     public List<Transform> highScoreEntryTransformList;
 
-    public List<HighScoreEntry> highScoreEntryList;
+    public static List<HighScoreEntry> highScoreEntryList;
     HighScores highScores;
 
     private void Awake()
@@ -110,28 +112,29 @@ public class highScoreTable : MonoBehaviour
      * param: score = the players score
      * param: name = the players name
      */
-    public void addHighScoreEntry(int score, string name)
+    public static void addHighScoreEntry(int score, string name)
     {
         //a new high score entry
         HighScoreEntry highScoreEntry = new HighScoreEntry { score = score, name = name };
-        
+
+        HighScores hs;
+
         // load saved high scores
         string jsonString = PlayerPrefs.GetString("highscoreTable"); //uploading list from key --> will be empty upon application launch
         if (jsonString.Length < 1)
         {
-            highScores = new HighScores { highScoreEntryList = highScoreEntryList };
+            hs = new HighScores { highScoreEntryList = highScoreEntryList };
         }
         else
         {
-            highScores = JsonUtility.FromJson<HighScores>(jsonString); //highscores is non null
+            hs = JsonUtility.FromJson<HighScores>(jsonString); //highscores is non null
         }
 
-
         // add new entry to high scores
-        highScores.highScoreEntryList.Add(highScoreEntry);
+        hs.highScoreEntryList.Add(highScoreEntry);
         
         //save updated highscores
-        string json = JsonUtility.ToJson(highScores); // converting highScores to json. 
+        string json = JsonUtility.ToJson(hs); // converting highScores to json. 
         PlayerPrefs.SetString("highscoreTable", json); //key, value --> saving the json string of highscores
         PlayerPrefs.Save(); //saving the string in json format
 
